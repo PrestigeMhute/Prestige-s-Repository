@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f4c312 0%, #b329da 100%);
+        }
+
+        .flashcard-container {
+            text-align: center;
+        }
+
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.is-flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard .front,
+        .flashcard .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .flashcard .back {
+            transform: rotateY(180deg);
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="flashcard-container">
+        <h1>Flashcard Quiz</h1>
+        <div id="flashcard" class="flashcard">
+            <div class="flashcard-inner">
+                <div class="front">
+                    <p id="question">Question will appear here</p>
+                </div>
+                <div class="back">
+                    <p id="answer">Answer will appear here</p>
+                </div>
+            </div>
+        </div>
+        <button id="flip-card">Flip card</button>
+        <button id="next-card">Next</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const flashcards = [
+                {question: "What is the capital of France?", answer: "Paris"},
+                {question: "What is 2 + 2?", answer: "4"},
+                {question: "What is the capital of Japan?", answer: "Tokyo"},
+            ];
+
+            let currentCard = 0;
+
+            const flashcard = document.getElementById('flashcard');
+            const questionEl = document.getElementById('question');
+            const answerEl = document.getElementById('answer');
+
+            function displayCard() {
+                questionEl.textContent = flashcards[currentCard].question;
+                answerEl.textContent = flashcards[currentCard].answer;
+                flashcard.classList.remove('is-flipped'); // reset flip when showing new card
+            }
+
+            document.getElementById('flip-card').addEventListener('click', () => {
+                flashcard.classList.toggle('is-flipped');
+            });
+
+            document.getElementById('next-card').addEventListener('click', () => {
+                currentCard = (currentCard + 1) % flashcards.length;
+                displayCard();
+            });
+
+            displayCard();
+        });
+    </script>
+</body>
+</html>
