@@ -166,25 +166,14 @@
                 <h3 class="mt-0">ABOUT ME</h3>
                 <div class="col-md-9 about-me-text">
                     <p>
-                        Hi! I am a passionate Computer Science student with a strong interest in software development, artificial intelligence, and problem-solving through technology. My studies have [...]
+                        Hi! I am a passionate Computer Science student with a strong interest in software development, artificial intelligence, and problem-solving through technology. My studies have equipped me with a solid foundation in programming, algorithms, and system design.
                     </p>
                     <p>
-                        I enjoy learning new technologies, building innovative projects, and collaborating with others to create efficient, user-centered solutions. My goal is to continue developing m[...]
+                        I enjoy learning new technologies, building innovative projects, and collaborating with others to create efficient, user-centered solutions. My goal is to continue developing my technical skills and contribute to real-world applications that make a meaningful impact.
                     </p>
                 </div>
                 <div class="col-md-3 text-center">
-                    <!--
-                        Image loading strategy:
-                        1) Try to load the profile picture from the repository raw URL (commit pinned)
-                        2) If it fails, fallback to a simple placeholder image from placehold.co
-                        Update the raw URL if you add the image somewhere else in the repo.
-                    -->
-                    <img
-                        src="https://raw.githubusercontent.com/PrestigeMhute/Prestige-s-Repository/9553d211f6abff3e781916e9bdc0d12050f91d87/Portfolio/profpic.jpg"
-                        class="profile-img"
-                        alt="Professional portrait of Prestige Tanatswa Mhute"
-                        onerror="this.onerror=null; this.src='https://placehold.co/200x250/007bff/ffffff?text=Profile';"
-                    >
+                    <img src="profpic.jpg" class="profile-img" alt="Professional portrait of Prestige Tanatswa Mhute" onerror="this.onerror=null; this.src='https://placehold.co/200x250/007bff/ffffff?text=Professional+Photo';" />
                 </div>
             </section>
 
@@ -227,7 +216,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul>
-                            <li>Database Management: SQL, MongoDB</li>
+                            <li>Database Management:SQL, MongoDB</li>
                             <li>Tools/Concepts: Git, GitHub, Linux/CLI, Problem-Solving and Analytical Thinking</li>
                         </ul>
                     </div>
@@ -238,16 +227,14 @@
                 <h3>KEY PROJECTS</h3>
                 <ul class="project-list list-unstyled">
                     <li>
-                        <strong><a href="#" target="_blank" rel="noopener noreferrer">Online Quiz Application</a>:</strong>
-                        Developed a web-based quiz application using HTML, CSS, JavaScript, and Python Flask for the backend.
-                    </li>
+                        <strong><a href="#" target="_blank">Online Quiz Application</a>:</strong> Developed a web-based quiz application using **HTML, CSS, JavaScript, and Python Flask** for the backend. Implemented user authentication and score tracking features. 
+                
                     <li>
-                       <strong><a href="#" target="_blank" rel="noopener noreferrer">Personal Portfolio Website</a>:</strong>
-                       This responsive website was developed using HTML, CSS, and Bootstrap to showcase my academic journey and projects.
-                    </li>
+                       <strong><a href="#" target="_blank">Personal Portfolio Website</a>:</strong> This responsive website was developed using **HTML, CSS, and Bootstrap** to showcase my academic journey and technical skills.
+                        
                     <li>
-                        <strong><a href="#" target="_blank" rel="noopener noreferrer">Voice Bridge Translator</a>:</strong>
-                        Created an NLP application using Python to facilitate translation by converting voice to text and translating between languages.
+                        <strong><a href="#" target="_blank">Voice Bridge Translator</a>:</strong> Created an NLP application using **Python** to facilitate translation by converting voice to text and text to voice output.
+                        
                     </li>
                 </ul>
             </section>
@@ -260,16 +247,7 @@
                     </ul>
                     <h3 class="mt-4">RESUME</h3>
                     <p>
-                        Download my full professional resume:
-                        <a
-                          href="https://raw.githubusercontent.com/PrestigeMhute/Prestige-s-Repository/9553d211f6abff3e781916e9bdc0d12050f91d87/Portfolio/Prestige%20Mhute%20Resume.pdf"
-                          download
-                          class="btn btn-primary btn-sm"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                            <i data-lucide="download" class="contact-icon"></i> Download Resume
-                        </a>
+                        Download my full professional resume: <a href="Prestige Mhute Resume.pdf" download class="btn btn-primary btn-sm"><i data-lucide="download" class="contact-icon"></i> Download Resume (PDF)</a>
                     </p>
                 </section>
 
@@ -278,8 +256,8 @@
                     <p>Feel free to reach out via email or connect with me on social media!</p>
                     <ul>
                         <li><i data-lucide="mail" class="contact-icon"></i> Email: <a href="mailto:tanatswamhute@gmail.com">tanatswamhute@gmail.com</a></li> 
-                        <li><i data-lucide="linkedin" class="contact-icon"></i> LinkedIn: <a href="https://www.linkedin.com/in/prestige-tanatswa-mhute-06722b367/" target="_blank" rel="noopener noreferrer">View my profile</a></li>
-                        <li><i data-lucide="github" class="contact-icon"></i> GitHub: <a href="https://github.com/PrestigeMhute" target="_blank" rel="noopener noreferrer">github.com/PrestigeMhute</a></li>
+                        <li><i data-lucide="linkedin" class="contact-icon"></i> LinkedIn: <a href="https://www.linkedin.com/in/prestige-tanatswa-mhute-06722b367/" target="_blank">View my profile</a></li>
+                        <li><i data-lucide="github" class="contact-icon"></i> GitHub: <a href="https://github.com/PrestigeMhute" target="_blank">github.com/PrestigeMhute</a></li>
                     </ul>
                     
                     <h4 class="mt-4 text-primary">Send a Quick Message</h4>
@@ -359,12 +337,9 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
